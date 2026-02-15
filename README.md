@@ -1,211 +1,191 @@
-# Wedding Gallery Website 💕
+# Wedding Website - Setup Instructions
 
-A beautiful, password-protected wedding gallery website with a romantic pink and gold theme.
+## 📁 Folder Structure
 
-## Features ✨
-
-- **Password Protection**: Secure access with password screen (Password: `shadi2026`)
-- **Dynamic Image Loading**: Automatically loads images from the `images` folder
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Lightbox Gallery**: Click any image to view in fullscreen with navigation
-- **Video Section**: Display wedding video
-- **Download Instructions**: Helpful guide for downloading all photos
-- **Beautiful Animations**: Smooth transitions and hover effects throughout
-
-## Setup Instructions 📋
-
-### 1. File Structure
-
-Create the following folder structure:
+Create the following folder structure on your computer or web hosting:
 
 ```
-wedding-gallery/
-├── index.html
-├── style.css
-├── script.js
-├── video.mp4 (your wedding video)
-└── images/
-    ├── img (1).JPG
-    ├── img (2).JPG
-    ├── img (3).JPG
-    └── ... (up to img (100).JPG)
+wedding-website/
+│
+├── index.html          (the main website file)
+├── images/             (create this folder)
+│   ├── img (1).JPG
+│   ├── img (2).JPG
+│   ├── img (3).JPG
+│   └── ... up to img (200).JPG
+│
+└── videos/             (create this folder)
+    ├── ceremony.mp4
+    ├── reception.mp4
+    └── firstdance.mp4
 ```
 
-### 2. Adding Your Images
+## 🔐 How to Change the Password
 
-1. Create a folder named `images` in the same directory as `index.html`
-2. Place your wedding photos in the `images` folder
-3. **IMPORTANT**: Name your images exactly as: `img (1).JPG`, `img (2).JPG`, `img (3).JPG`, etc.
-   - Use this format: `img (NUMBER).JPG`
-   - Include the space between "img" and the number
-   - Use capital `.JPG` extension
-4. If you have more or fewer than 100 images:
-   - Open `script.js`
-   - Find the line: `const TOTAL_IMAGES = 100;`
-   - Change `100` to your actual number of images
+1. Open `index.html` in a text editor (Notepad, TextEdit, VS Code, etc.)
+2. Find line 375 which says:
+   ```javascript
+   const CORRECT_PASSWORD = 'wedding2024';
+   ```
+3. Replace `'wedding2024'` with your desired password
+4. Save the file
 
-### 3. Adding Your Video
-
-1. Place your wedding video file in the same directory as `index.html`
-2. Name it `video.mp4`
-3. If your video has a different name or format:
-   - Open `index.html`
-   - Find: `<source src="video.mp4" type="video/mp4">`
-   - Update the filename and type accordingly
-
-### 4. Changing the Password
-
-To change the password:
-1. Open `script.js`
-2. Find the line: `const CORRECT_PASSWORD = 'shadi2026';`
-3. Replace `shadi2026` with your desired password
-
-### 5. Running the Website
-
-Simply open `index.html` in any web browser:
-- Double-click the file, or
-- Right-click and select "Open with" → Your preferred browser
-
-## Usage Guide 🎯
-
-### For Guests:
-
-1. **Enter Password**: Type `shadi2026` and click "View Gallery"
-2. **Browse Photos**: Scroll through the beautiful photo grid
-3. **View Fullscreen**: Click any photo to see it in fullscreen mode
-   - Use arrow buttons or keyboard arrows to navigate
-   - Press ESC or click X to close
-4. **Watch Video**: Click the "Video" tab to watch the wedding video
-5. **Download Photos**: Click the "Download" tab for instructions to save all photos
-
-### Navigation:
-
-- **Photos Tab** 📷: View all wedding photos in a grid layout
-- **Video Tab** 🎬: Watch the wedding video
-- **Download Tab** ⬇️: Instructions for downloading all images
-
-### Keyboard Shortcuts (in Lightbox):
-
-- `←` Left Arrow: Previous image
-- `→` Right Arrow: Next image
-- `ESC`: Close lightbox
-
-## Customization Options 🎨
-
-### Change Colors
-
-Edit `style.css` and modify these variables at the top:
-
-```css
-:root {
-    --blush-pink: #FFE4E1;      /* Light pink background */
-    --rose-pink: #FFB6C1;        /* Medium pink accents */
-    --deep-pink: #FF69B4;        /* Primary pink */
-    --gold: #FFD700;             /* Gold accents */
-    /* ... more colors */
-}
+**Example:**
+```javascript
+const CORRECT_PASSWORD = 'OurSpecialDay2024';
 ```
 
-### Change Fonts
+## 📸 Where to Put Your Photos
 
-The website uses:
-- **Great Vibes**: Elegant script font for titles
-- **Italiana**: Sophisticated serif for headings
-- **Lora**: Readable serif for body text
+1. Create a folder named `photos` in the same location as `index.html`
+2. Copy all your wedding photos into this folder
+3. Make sure your photos are named exactly as: `img (1).JPG`, `img (2).JPG`, etc.
+4. The website will automatically load all 200 photos
 
-To change fonts, edit the Google Fonts link in `index.html`.
+**Important:** 
+- The naming must be exact: `img (1).JPG` not `img(1).JPG` or `img 1.JPG`
+- The file extension should be `.JPG` (uppercase)
+- If your files have lowercase `.JPG`, that's fine too, just update line 378 in the code
 
-### Modify Text Content
+## 🎥 Where to Put Your Videos
 
-All text content can be edited directly in `index.html`:
-- Main title: "Our Wedding Day"
-- Subtitle: "A celebration of love and togetherness"
-- Footer message: "Thank you for celebrating with us!"
+1. Create a folder named `videos` in the same location as `index.html`
+2. Copy your video files into this folder
+3. By default, the website expects these video files:
+   - `ceremony.mp4`
+   - `reception.mp4`
+   - `firstdance.mp4`
 
-## Technical Details 🔧
+### To Change Video Files or Add More Videos:
 
-### Browser Compatibility
+Open `index.html` and find lines 384-388:
+```javascript
+const videos = [
+    { file: 'videos/ceremony.mp4', title: 'Wedding Ceremony' },
+    { file: 'videos/reception.mp4', title: 'Reception Highlights' },
+    { file: 'videos/firstdance.mp4', title: 'First Dance' }
+];
+```
 
-- ✅ Chrome (recommended)
-- ✅ Firefox
-- ✅ Safari
-- ✅ Edge
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+**To add more videos:**
+```javascript
+const videos = [
+    { file: 'videos/ceremony.mp4', title: 'Wedding Ceremony' },
+    { file: 'videos/reception.mp4', title: 'Reception Highlights' },
+    { file: 'videos/firstdance.mp4', title: 'First Dance' },
+    { file: 'videos/speeches.mp4', title: 'Speeches' },
+    { file: 'videos/bouquet-toss.mp4', title: 'Bouquet Toss' }
+];
+```
 
-### Performance Features
+**To remove a video:** Simply delete the entire line
 
-- Lazy loading for images (loads images as you scroll)
-- Smooth animations with CSS
-- Optimized for mobile devices
-- Responsive image grid
+**If you don't have videos yet:** Delete all the lines between the square brackets `[ ]` so it looks like:
+```javascript
+const videos = [ ];
+```
 
-### Image Format Support
+## ➕ How to Add More Photos Later
 
-The script looks for `.JPG` files by default. If your images have different extensions:
-- Open `script.js`
-- Find: `const imagePath = `images/img (${i}).JPG`;`
-- Change `.JPG` to your extension (e.g., `.jpg`, `.jpeg`, `.png`)
+### Method 1: Add to the End
+1. Continue numbering from where you left off
+2. For example, if you have 200 photos and want to add 50 more:
+   - Name the new photos: `img (201).JPG`, `img (202).JPG`, ... `img (250).JPG`
+3. Update the total count in `index.html` on line 376:
+   ```javascript
+   const TOTAL_PHOTOS = 250;  // Changed from 200 to 250
+   ```
 
-## Troubleshooting 🔍
+### Method 2: Start Fresh
+1. Rename all photos from 1 to however many you have total
+2. Update the `TOTAL_PHOTOS` number accordingly
 
-### Images Not Showing?
+## 🌐 How to Use the Website
 
-1. **Check file names**: Must be exactly `img (1).JPG`, `img (2).JPG`, etc.
-2. **Check folder**: Images must be in a folder named `images`
-3. **Check extension**: Must be `.JPG` (or update script if using different format)
-4. **Check browser console**: Press F12 to see any error messages
+### Option 1: Use Locally (On Your Computer)
+1. Simply double-click `index.html`
+2. It will open in your web browser
+3. Enter the password to view the website
 
-### Video Not Playing?
+**Limitations:** 
+- Only works on your computer
+- Others cannot access it
 
-1. **Check file name**: Must be `video.mp4` in the same folder as `index.html`
-2. **Check format**: Browser may not support the video codec. Try converting to H.264 MP4
-3. **File size**: Very large videos may not play smoothly. Consider compressing the video
+### Option 2: Upload to Web Hosting
+1. Upload all files (index.html, photos folder, videos folder) to your web hosting
+2. Share the website URL with family and friends
+3. They can enter the password to view your wedding memories
 
-### Password Not Working?
+**Recommended Free Hosting Options:**
+- **Netlify** (easiest - drag and drop upload)
+- **GitHub Pages**
+- **Vercel**
+- Any basic web hosting service
 
-1. **Check spelling**: Password is case-sensitive: `shadi2026`
-2. **Check script**: Make sure `script.js` is in the same folder as `index.html`
-3. **Browser console**: Press F12 to check for JavaScript errors
+### Option 3: Upload to Google Drive/Dropbox (Alternative)
+1. Zip the entire wedding-website folder
+2. Upload to Google Drive or Dropbox
+3. Share the zip file with family and friends
+4. They download it and open index.html on their computer
 
-## Security Note 🔒
+## 🎨 Customization Tips
 
-This is a **client-side password protection**. The password is stored in the JavaScript file, which means:
-- It prevents casual access
-- **It is NOT suitable for highly sensitive content**
-- Anyone who views the page source can find the password
+### Change Website Title and Heading:
+- Line 6: Change `<title>Our Wedding Memories</title>`
+- Line 253: Change `<h1>Our Wedding Memories</h1>`
+- Line 254: Change `<p>Thank you for celebrating with us</p>`
 
-For stronger security, consider:
-- Using a proper backend authentication system
-- Hosting on a platform with built-in password protection
-- Using a service like Netlify with password protection
+### Change Color Scheme:
+The current colors are warm brown/beige tones. To change:
+- Line 45: `#8b7355` is the main brown color
+- Line 81: `#d4a5a5` is the pink/rose color
+- Search for these colors in the file and replace with your preferred colors
 
-## Deployment Options 🌐
+## 📱 Mobile-Friendly
 
-### Option 1: Local Use
-- Just open `index.html` in a browser
-- Share the folder with guests via USB/email
+The website is fully responsive and works perfectly on:
+- Desktop computers
+- Tablets
+- Smartphones
 
-### Option 2: Web Hosting
-- Upload all files to any web hosting service
-- Free options: GitHub Pages, Netlify, Vercel
-- Share the URL with guests
+## 🔒 Security Note
 
-### Option 3: Cloud Storage
-- Upload to Google Drive or Dropbox
-- Share the folder link (with password in a separate message)
+This password protection is **basic security** suitable for sharing with family and friends. It's not bank-level security, but it prevents casual access to your photos.
 
-## Support & Credits 💝
+The password is stored in the HTML file, so anyone with technical knowledge could potentially find it if they view the page source. For most family sharing purposes, this is perfectly fine.
 
-Created with love for your special day!
+## ⚡ Performance Tips
 
-**Technologies Used:**
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Google Fonts (Great Vibes, Italiana, Lora)
+**For Better Loading Speed:**
+1. Compress/resize your photos before uploading (recommended: max 2000px width)
+2. Use tools like TinyPNG or JPEGmini to reduce file sizes
+3. For videos, use compressed MP4 files (H.264 codec works best)
+
+## ❓ Troubleshooting
+
+**Photos not showing:**
+- Check that the `images` folder is in the same location as index.html
+- Verify photo file names match exactly: `img (1).JPG`
+- Check file extensions (.JPG vs .JPG)
+
+**Videos not playing:**
+- Ensure videos are in MP4 format
+- Check that the `videos` folder exists
+- Verify video file names match the code
+
+**Password not working:**
+- Check for typos in the password
+- Password is case-sensitive
+- Clear browser cache and try again
+
+## 📧 Support
+
+If you encounter any issues, check that:
+1. All folders are in the correct location
+2. File names match exactly
+3. The password is typed correctly
+4. You're using a modern web browser (Chrome, Firefox, Safari, Edge)
 
 ---
 
-**Enjoy sharing your beautiful wedding memories!** 💕✨
-
-For any issues or questions, refer to the troubleshooting section above.
+**Enjoy sharing your beautiful wedding memories! 💕**

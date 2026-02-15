@@ -1,0 +1,103 @@
+╔══════════════════════════════════════════════════════════════╗
+║          WEDDING WEBSITE - QUICK START GUIDE                 ║
+╚══════════════════════════════════════════════════════════════╝
+
+✅ STEP 1: CREATE FOLDERS
+   Create these folders next to index.html:
+   📁 images/
+   📁 videos/
+
+✅ STEP 2: ADD YOUR PHOTOS
+   Copy your 200 photos to the photos/ folder
+   Name them: img (1).JPG, img (2).JPG ... img (200).JPG
+   
+   ⚠️  Important: Include the space! "img (1).JPG" not "img(1).JPG"
+
+✅ STEP 3: ADD YOUR VIDEOS (Optional)
+   Copy video files to the videos/ folder
+   Default names: ceremony.mp4, reception.mp4, firstdance.mp4
+   (Or edit index.html to match your video file names)
+
+✅ STEP 4: SET YOUR PASSWORD
+   Open index.html in a text editor
+   Find line: const CORRECT_PASSWORD = 'wedding2024';
+   Change 'wedding2024' to your desired password
+   Save the file
+
+✅ STEP 5: TEST IT!
+   Double-click index.html to open in browser
+   Enter your password
+   Check that photos and videos load correctly
+
+✅ STEP 6: SHARE IT
+   
+   OPTION A - Share Locally:
+   • Zip the entire folder
+   • Send to family/friends via email or USB drive
+   • They unzip and open index.html
+   
+   OPTION B - Host Online (Recommended):
+   • Upload all files to Netlify, GitHub Pages, or any web host
+   • Share the website URL
+   • Share the password separately (via text/call)
+
+═══════════════════════════════════════════════════════════════
+
+📊 YOUR FOLDER STRUCTURE SHOULD LOOK LIKE THIS:
+
+wedding-website/
+├── index.html              ← The website file
+├── README.md               ← Detailed instructions
+├── QUICK_START.txt         ← This file
+├── images/                 ← Create this folder
+│   ├── img (1).JPG
+│   ├── img (2).JPG
+│   └── ... (200 total)
+└── videos/                 ← Create this folder
+    ├── ceremony.mp4
+    ├── reception.mp4
+    └── firstdance.mp4
+
+═══════════════════════════════════════════════════════════════
+
+🔐 DEFAULT PASSWORD: wedding2024
+   (Remember to change this!)
+
+═══════════════════════════════════════════════════════════════
+
+📝 TO ADD MORE PHOTOS LATER:
+
+1. Add new photos: img (201).JPG, img (202).JPG, etc.
+2. Open index.html and find this line:
+   const TOTAL_PHOTOS = 200;
+3. Change 200 to your new total (e.g., 250)
+4. Save and refresh the page
+
+═══════════════════════════════════════════════════════════════
+
+🎨 FEATURES:
+
+✓ Password protected
+✓ Beautiful photo gallery with 200 photos
+✓ Full-screen photo viewer (lightbox)
+✓ Keyboard navigation (arrow keys, ESC)
+✓ Video player for wedding videos
+✓ Mobile-friendly and responsive
+✓ Elegant wedding-themed design
+✓ No backend or database needed
+✓ Works offline after files are loaded
+
+═══════════════════════════════════════════════════════════════
+
+💡 TIPS:
+
+• Compress photos before uploading for faster loading
+• Use MP4 format for videos (most compatible)
+• Test on your phone to ensure mobile compatibility
+• Clear browser cache if changes don't appear
+• Share password separately (not in the same email as link)
+
+═══════════════════════════════════════════════════════════════
+
+Need help? Check README.md for detailed instructions!
+
